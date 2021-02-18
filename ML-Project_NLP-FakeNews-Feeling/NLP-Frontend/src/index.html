@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NLPFrontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+
+    body {
+      background-color: #d6e2ff !important;
+      color: #121212;
+    }
+
+    .overlay-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      background-color: #0000006e !important;
+      z-index: 1;
+    }
+
+    .more-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      z-index: 10;
+      width: 60vw;
+      height: 30vh;
+      border-radius: 1em;
+    }
+
+    .close-popup {
+      color: #777;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      cursor: pointer
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <app-root></app-root>
+  </div>
+</body>
+</html>

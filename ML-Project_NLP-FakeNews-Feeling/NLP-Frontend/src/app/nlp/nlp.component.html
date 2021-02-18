@@ -1,0 +1,76 @@
+<div *ngIf="alert">
+    <div class="overlay-popup"></div>
+    <div class="more-popup p-4 overflow-auto">
+        <div class="close-popup" (click)="alert=false"><b>X</b></div>
+        <div class="mt-2" style="white-space: pre-line">
+            {{message}}
+        </div>
+    </div>
+</div>
+
+<div class="py-5">
+    <h1 class="text-center mb-5">NLP : Detecting Fake News &amp; Sentiment Analysis</h1>
+    <h2 class="mb-4">Fake news detector :</h2>
+    <form [formGroup]="form0" (submit)="submitFakeNews()">
+        <div class="form-group">
+            <textarea class="form-control w-75" rows="4" formControlName="text"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="form0.invalid">Submit</button>
+    </form>
+    <h2 class="my-4">Sentiment Analysis :</h2>
+    <form [formGroup]="form00" (submit)="submitSentiment()">
+        <div class="form-group">
+            <textarea class="form-control w-75" rows="4" formControlName="text"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="form00.invalid">Submit</button>
+    </form>
+    <h2 class="my-4">NLP Functions :</h2>
+    <div class="form-group w-25">
+        <select (change)="nlpFunction($event.target.value)" [value]='1' class="form-control">
+            <option value="1">Sentence Tokenization</option>
+            <option value="2">Word Tokenization</option>
+            <option value="3">Words Frequency</option>
+            <option value="4">Remove Punctuation</option>
+            <option value="5">Remove Stopwords</option>
+            <option value="6">Stemming</option>
+            <option value="7">Lemmatization</option>
+            <option value="8">Pos Tagging</option>
+            <option value="9">Bag Of Words</option>
+            <option value="10">TF-IDF</option>
+            <option value="11">Similarity</option>
+        </select>
+    </div>
+    <div *ngIf="frm">
+        <form [formGroup]="form" (submit)="submitNLP()">
+            <div class="form-group">
+                <textarea class="form-control w-75" rows="4" formControlName="text"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
+    <div *ngIf="frm1">
+        <form [formGroup]="form1" (submit)="submitNLP()">
+            <div class="form-group">
+                <textarea class="form-control w-75" rows="4" formControlName="text"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="number" min="1" max="15" class="form-control w-25" placeholder="Number of words"
+                    formControlName="nbr">
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="form1.invalid">Submit</button>
+        </form>
+    </div>
+    <div *ngIf="frm2">
+        <form [formGroup]="form2" (submit)="submitNLP()">
+            <div class="form-row w-75 mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="word 1" formControlName="word1">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="word 2" formControlName="word2">
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="form2.invalid">Submit</button>
+        </form>
+    </div>
+</div>
